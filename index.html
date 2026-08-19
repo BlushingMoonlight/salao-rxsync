@@ -1,0 +1,813 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- ===================== SEO ===================== -->
+    <title>RXSync Salão | Atendimento com IA no WhatsApp para salões, cabeleireiros e barbearias</title>
+    <meta name="description" content="Assistente virtual que responde suas clientes no WhatsApp 24h por dia, informa preço, marca horário e lembra na véspera. Implantação feita por nós. R$ 99 por mês, sem fidelidade.">
+    <meta name="keywords" content="agendamento salao de beleza whatsapp, chatbot cabeleireiro, ia para barbearia, agenda online salao, assistente virtual beleza, rxsync salao">
+    <meta name="author" content="RXSync Tecnologia">
+    <meta name="robots" content="index, follow">
+
+    <meta name="theme-color" content="#0f172a">
+    <meta name="format-detection" content="telephone=no">
+
+    <link rel="canonical" href="https://salao.rxsync.com.br/">
+
+    <!-- ===================== OPEN GRAPH ===================== -->
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="RXSync Salão">
+    <meta property="og:url" content="https://salao.rxsync.com.br/">
+    <meta property="og:title" content="RXSync Salão | A assistente que responde suas clientes 24h">
+    <meta property="og:description" content="Cliente manda mensagem às 22h e ninguém responde? A RXSync responde, informa preço e marca o horário. R$ 99 por mês, sem fidelidade.">
+    <meta property="og:image" content="https://salao.rxsync.com.br/assets/og-rxsync-salao.png">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="RXSync Salão — atendimento com inteligência artificial para salões de beleza">
+    <meta property="og:locale" content="pt_BR">
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="RXSync Salão | Atendimento com IA no WhatsApp">
+    <meta name="twitter:description" content="Sua cliente é respondida na hora, a qualquer hora. E o horário já sai marcado.">
+    <meta name="twitter:image" content="https://salao.rxsync.com.br/assets/og-rxsync-salao.png">
+
+    <!-- ===================== FAVICON ===================== -->
+    <link rel="icon" type="image/png" href="assets/favicon-rxsync.png">
+    <link rel="apple-touch-icon" href="assets/favicon-rxsync.png">
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+    <link rel="preconnect" href="https://cdn.tailwindcss.com" crossorigin>
+    <link rel="preconnect" href="https://unpkg.com" crossorigin>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://unpkg.com/lucide@latest"></script>
+
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    fontFamily: { sans: ['Inter', 'sans-serif'] },
+                    colors: {
+                        primary: { 50: '#f0f5f9', 100: '#e0ebf4', 200: '#cbdcec', 300: '#a3b8cf', 400: '#60a5fa', 500: '#3b82f6', 600: '#1d4ed8', 700: '#1e40af', 800: '#1e3a8a', 900: '#0f172a', 950: '#080c17' },
+                        accent: { 300: '#c4b5fd', 400: '#a78bfa', 500: '#8b5cf6', 600: '#7c3aed', 700: '#6d28d9', 800: '#5b21b6' }
+                    },
+                    boxShadow: {
+                        'glow': '0 0 50px -12px rgba(124, 58, 237, 0.45)',
+                        'mac': '0 25px 50px -12px rgba(0, 0, 0, 0.5)'
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        section[id], main [id] { scroll-margin-top: 6rem; }
+        .faq-content { max-height: 0; overflow: hidden; transition: max-height 0.4s ease-out; }
+        .faq-item.active .faq-content { max-height: 1000px; }
+        .faq-item.active .faq-icon { transform: rotate(180deg); }
+        .select-field {
+            background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%2364748b' stroke-width='2.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpolyline points='6 9 12 15 18 9'%3E%3C/polyline%3E%3C/svg%3E");
+            background-repeat: no-repeat; background-position: right 1rem center; background-size: 1.1rem; padding-right: 2.75rem;
+        }
+        .mockup-scroll::-webkit-scrollbar { width: 4px; }
+        .mockup-scroll::-webkit-scrollbar-track { background: transparent; }
+        .mockup-scroll::-webkit-scrollbar-thumb { background: #cbd5e1; border-radius: 4px; }
+        @media (prefers-reduced-motion: reduce) {
+            html { scroll-behavior: auto; }
+            .animate-pulse { animation: none; }
+        }
+    </style>
+
+    <!-- ===================== DADOS ESTRUTURADOS ===================== -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://salao.rxsync.com.br/#organizacao",
+          "name": "RXSync",
+          "alternateName": "RXSync Salão",
+          "url": "https://salao.rxsync.com.br/",
+          "logo": "https://salao.rxsync.com.br/assets/og-rxsync-salao.png",
+          "email": "contato@rxsync.com.br",
+          "description": "Atendimento e agendamento automatizado com inteligência artificial para salões de beleza, cabeleireiros e barbearias.",
+          "areaServed": { "@type": "Country", "name": "Brasil" }
+        },
+        {
+          "@type": "WebSite",
+          "@id": "https://salao.rxsync.com.br/#site",
+          "url": "https://salao.rxsync.com.br/",
+          "name": "RXSync Salão",
+          "inLanguage": "pt-BR",
+          "publisher": { "@id": "https://salao.rxsync.com.br/#organizacao" }
+        },
+        {
+          "@type": "Service",
+          "name": "Assistente virtual com IA para salões de beleza",
+          "serviceType": "Atendimento e agendamento automatizado no WhatsApp",
+          "provider": { "@id": "https://salao.rxsync.com.br/#organizacao" },
+          "areaServed": { "@type": "Country", "name": "Brasil" },
+          "hasOfferCatalog": {
+            "@type": "OfferCatalog",
+            "name": "Planos RXSync Salão",
+            "itemListElement": [
+              {
+                "@type": "Offer",
+                "name": "Plano Salão",
+                "description": "Assistente com IA 24h no WhatsApp e no site, respondendo preço e serviço, marcando horário na agenda e lembrando a cliente na véspera. Sem fidelidade.",
+                "price": "99.00",
+                "priceCurrency": "BRL",
+                "priceSpecification": {
+                  "@type": "UnitPriceSpecification",
+                  "price": "99.00",
+                  "priceCurrency": "BRL",
+                  "billingDuration": 1,
+                  "billingIncrement": 1,
+                  "unitCode": "MON"
+                }
+              }
+            ]
+          }
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Preciso trocar de sistema ou de agenda?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Não. A assistente trabalha em cima da agenda que o salão já usa. Se você já usa Google Agenda, é só compartilhar com a gente. Se não usa nenhuma, a gente cria e ensina." }
+            },
+            {
+              "@type": "Question",
+              "name": "A cliente percebe que está falando com um robô?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Sim, e por escolha nossa. A assistente se identifica como virtual logo na primeira mensagem. Cliente que descobre depois se sente enganada, e isso custa mais caro que a economia de tempo." }
+            },
+            {
+              "@type": "Question",
+              "name": "E se a cliente quiser falar com uma pessoa?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Basta pedir. A assistente sai da conversa na hora e avisa a equipe. Vocês também podem assumir qualquer conversa pelo painel a qualquer momento, e a partir daí ela não responde mais naquele atendimento." }
+            },
+            {
+              "@type": "Question",
+              "name": "Quanto tempo leva para começar a funcionar?",
+              "acceptedAnswer": { "@type": "Answer", "text": "A implantação é feita por nós. Você envia a lista de serviços, preços e horários, a gente configura, testa junto com você e coloca no ar." }
+            },
+            {
+              "@type": "Question",
+              "name": "Tem fidelidade?",
+              "acceptedAnswer": { "@type": "Answer", "text": "Não. É mês a mês, cancela quando quiser. E você tem 7 dias para desistir sem custo nenhum depois de contratar." }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+</head>
+
+<body class="bg-white font-sans antialiased text-slate-700">
+
+    <!-- ===================== HEADER ===================== -->
+    <header class="fixed top-0 left-0 right-0 z-50 bg-white/90 backdrop-blur-md border-b border-slate-100">
+        <nav class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center h-20">
+                <a href="/" class="flex items-center gap-2.5">
+                    <span class="w-9 h-9 rounded-lg bg-accent-600 flex items-center justify-center">
+                        <i data-lucide="sparkles" class="w-5 h-5 text-white"></i>
+                    </span>
+                    <span class="text-xl font-extrabold tracking-tight text-primary-900">RXSync <span class="text-accent-600">Salão</span></span>
+                </a>
+
+                <div class="hidden lg:flex items-center gap-8">
+                    <a href="#dores" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">O problema</a>
+                    <a href="#solucao" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">Como funciona</a>
+                    <a href="#seguranca" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">Segurança</a>
+                    <a href="#precos" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">Preço</a>
+                    <button onclick="scrollToForm('nav')" class="inline-flex items-center justify-center px-6 py-2.5 border border-transparent text-sm font-medium rounded-lg text-white bg-accent-600 hover:bg-accent-700 shadow-sm transition-all hover:shadow-glow">
+                        Quero ver funcionando
+                    </button>
+                </div>
+
+                <div class="lg:hidden flex items-center">
+                    <button id="mobile-menu-btn" class="text-slate-600 hover:text-primary-900 focus:outline-none focus-visible:ring-2 focus-visible:ring-accent-500 rounded-md p-1" aria-label="Abrir menu de navegação" aria-controls="mobile-menu" aria-expanded="false">
+                        <i data-lucide="menu" class="w-6 h-6"></i>
+                    </button>
+                </div>
+            </div>
+        </nav>
+
+        <div id="mobile-menu" class="hidden bg-white border-t border-slate-100 absolute w-full">
+            <div class="px-4 pt-2 pb-6 space-y-1 shadow-2xl">
+                <a href="#dores" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">O problema</a>
+                <a href="#solucao" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">Como funciona</a>
+                <a href="#seguranca" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">Segurança</a>
+                <a href="#precos" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">Preço</a>
+                <button onclick="scrollToForm('menu')" class="block w-full text-center mt-4 px-6 py-3 text-base font-medium rounded-lg text-white bg-accent-600 hover:bg-accent-700">
+                    Quero ver funcionando
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main>
+        <!-- ===================== HERO ===================== -->
+        <section class="relative pt-32 pb-20 lg:pt-40 lg:pb-32 bg-primary-900 overflow-hidden">
+            <div class="absolute inset-0 opacity-20" aria-hidden="true">
+                <div class="absolute -top-24 -right-24 w-96 h-96 bg-accent-600 rounded-full blur-3xl"></div>
+                <div class="absolute bottom-0 -left-24 w-80 h-80 bg-accent-500 rounded-full blur-3xl"></div>
+            </div>
+
+            <div class="relative max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16 items-center">
+                    <div>
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-600/20 border border-accent-500/30 text-accent-300 text-xs font-semibold tracking-wide uppercase">
+                            <i data-lucide="scissors" class="w-3.5 h-3.5"></i>
+                            Para salões, cabeleireiros e barbearias
+                        </span>
+
+                        <h1 class="mt-6 text-4xl sm:text-5xl lg:text-6xl font-extrabold text-white leading-tight tracking-tight">
+                            A cliente manda mensagem às 22h.<br>
+                            <span class="text-accent-400">Alguém responde.</span>
+                        </h1>
+
+                        <p class="mt-6 text-lg text-slate-300 leading-relaxed max-w-xl">
+                            A RXSync é uma assistente virtual que atende suas clientes no WhatsApp a qualquer hora:
+                            responde preço e serviço, marca o horário na sua agenda e lembra no dia anterior.
+                            Você continua cortando cabelo.
+                        </p>
+
+                        <div class="mt-10 flex flex-col sm:flex-row gap-4">
+                            <button onclick="scrollToForm('hero')" class="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg text-white bg-accent-600 hover:bg-accent-700 shadow-lg transition-all hover:shadow-glow">
+                                Quero ver funcionando
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+                            <a href="#precos" class="inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg text-white border border-white/20 hover:bg-white/10 transition-colors">
+                                Ver preço
+                            </a>
+                        </div>
+
+                        <div class="mt-10 flex flex-wrap items-center gap-x-8 gap-y-3 text-sm text-slate-400">
+                            <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-400"></i> Sem fidelidade</span>
+                            <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-400"></i> Implantação feita por nós</span>
+                            <span class="flex items-center gap-2"><i data-lucide="check" class="w-4 h-4 text-accent-400"></i> 7 dias para desistir</span>
+                        </div>
+                    </div>
+
+                    <!-- Mockup de conversa -->
+                    <div class="relative">
+                        <div class="bg-white rounded-2xl shadow-mac overflow-hidden border border-slate-200">
+                            <div class="bg-primary-900 px-5 py-3.5 flex items-center gap-3">
+                                <span class="w-9 h-9 rounded-full bg-accent-600 flex items-center justify-center">
+                                    <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
+                                </span>
+                                <div>
+                                    <p class="text-sm font-semibold text-white">Studio Bela Hair</p>
+                                    <p class="text-xs text-accent-300 flex items-center gap-1.5">
+                                        <span class="w-1.5 h-1.5 rounded-full bg-green-400 animate-pulse"></span>
+                                        assistente virtual · online
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="mockup-scroll bg-slate-50 p-5 space-y-3 max-h-96 overflow-y-auto">
+                                <div class="flex justify-end">
+                                    <p class="bg-accent-600 text-white text-sm rounded-2xl rounded-br-sm px-4 py-2.5 max-w-[80%]">
+                                        oi, quanto ta a escova?
+                                    </p>
+                                </div>
+                                <div class="flex">
+                                    <p class="bg-white border border-slate-200 text-slate-700 text-sm rounded-2xl rounded-bl-sm px-4 py-2.5 max-w-[85%]">
+                                        Oi! Sou a assistente virtual do Studio Bela Hair. A escova sai por R$ 60.
+                                        Quer que eu já veja um horário pra você?
+                                    </p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <p class="bg-accent-600 text-white text-sm rounded-2xl rounded-br-sm px-4 py-2.5 max-w-[80%]">
+                                        quero sim, pode ser quinta
+                                    </p>
+                                </div>
+                                <div class="flex">
+                                    <p class="bg-white border border-slate-200 text-slate-700 text-sm rounded-2xl rounded-bl-sm px-4 py-2.5 max-w-[85%]">
+                                        Tenho quinta às 14h ou às 16h30. Qual fica melhor?
+                                    </p>
+                                </div>
+                                <div class="flex justify-end">
+                                    <p class="bg-accent-600 text-white text-sm rounded-2xl rounded-br-sm px-4 py-2.5 max-w-[80%]">
+                                        16h30
+                                    </p>
+                                </div>
+                                <div class="flex">
+                                    <p class="bg-white border border-slate-200 text-slate-700 text-sm rounded-2xl rounded-bl-sm px-4 py-2.5 max-w-[85%]">
+                                        Fechado. Me passa seu nome completo e telefone que eu já deixo marcado.
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="bg-white px-5 py-3 border-t border-slate-100 flex items-center gap-2">
+                                <span class="text-xs text-slate-400">22:47 — e o salão fechado desde as 19h</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== DORES ===================== -->
+        <section id="dores" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 tracking-tight">
+                        Você não perde cliente por preço. Perde por demora.
+                    </h2>
+                    <p class="mt-5 text-lg text-slate-600 leading-relaxed">
+                        Quem procura salão manda mensagem para três de uma vez. Marca no primeiro que responde.
+                        E quase sempre a mensagem chega quando você está com a mão na tinta, ou depois que fechou.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-3 gap-8">
+                    <div class="p-8 rounded-2xl border border-slate-200 hover:border-accent-300 transition-colors">
+                        <span class="w-12 h-12 rounded-xl bg-accent-50 flex items-center justify-center">
+                            <i data-lucide="moon" class="w-6 h-6 text-accent-600"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold text-primary-900">A mensagem de fora do horário</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">
+                            Chega às 22h, você vê às 9h do dia seguinte. Nesse intervalo ela já marcou em outro lugar.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-2xl border border-slate-200 hover:border-accent-300 transition-colors">
+                        <span class="w-12 h-12 rounded-xl bg-accent-50 flex items-center justify-center">
+                            <i data-lucide="armchair" class="w-6 h-6 text-accent-600"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold text-primary-900">A cadeira vazia</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">
+                            Cliente que esquece e não avisa. Uma falta na sexta à tarde é o dia inteiro
+                            de uma profissional saindo pelo ralo.
+                        </p>
+                    </div>
+
+                    <div class="p-8 rounded-2xl border border-slate-200 hover:border-accent-300 transition-colors">
+                        <span class="w-12 h-12 rounded-xl bg-accent-50 flex items-center justify-center">
+                            <i data-lucide="repeat" class="w-6 h-6 text-accent-600"></i>
+                        </span>
+                        <h3 class="mt-6 text-lg font-bold text-primary-900">A mesma pergunta, o dia inteiro</h3>
+                        <p class="mt-3 text-slate-600 leading-relaxed">
+                            "Quanto é a escova?", "vocês abrem domingo?", "tem horário hoje?".
+                            Toda vez parando o que está fazendo para digitar a mesma coisa.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FAIXA ===================== -->
+        <section class="py-20 bg-gradient-to-br from-accent-600 to-accent-800 text-white relative overflow-hidden">
+            <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
+                <p class="text-2xl sm:text-3xl font-bold leading-snug">
+                    Uma cliente recuperada por mês já paga o serviço inteiro.
+                </p>
+                <p class="mt-5 text-accent-100 text-lg">
+                    O resto é tempo que volta pro seu dia.
+                </p>
+            </div>
+        </section>
+
+        <!-- ===================== SOLUÇÃO ===================== -->
+        <section id="solucao" class="py-24 bg-slate-50 border-y border-slate-200 overflow-hidden">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <span class="text-sm font-bold uppercase tracking-wider text-accent-600">Como funciona</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold text-primary-900 tracking-tight">
+                        Ela trabalha no WhatsApp que você já usa
+                    </h2>
+                    <p class="mt-5 text-lg text-slate-600 leading-relaxed">
+                        Não é aplicativo novo, não é número novo para divulgar, não é sistema para sua equipe aprender.
+                        É o mesmo WhatsApp do salão, com alguém sempre do outro lado.
+                    </p>
+                </div>
+
+                <div class="mt-16 grid md:grid-cols-2 gap-x-12 gap-y-10">
+                    <div class="flex gap-5">
+                        <span class="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <i data-lucide="message-circle" class="w-5 h-5 text-accent-600"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary-900">Responde preço e serviço na hora</h3>
+                            <p class="mt-2 text-slate-600 leading-relaxed">
+                                Com a sua tabela, do seu jeito. Ela nunca inventa valor nem promete resultado de cor ou química.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <span class="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <i data-lucide="calendar-check" class="w-5 h-5 text-accent-600"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary-900">Marca na agenda de verdade</h3>
+                            <p class="mt-2 text-slate-600 leading-relaxed">
+                                Ela consulta os horários que estão realmente livres e só confirma depois que o
+                                horário foi reservado. Nada de agenda paralela.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <span class="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <i data-lucide="bell-ring" class="w-5 h-5 text-accent-600"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary-900">Lembra a cliente na véspera</h3>
+                            <p class="mt-2 text-slate-600 leading-relaxed">
+                                O jeito mais barato de reduzir falta. E se ela não puder mais, avisa a tempo de
+                                você encaixar outra pessoa.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <span class="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <i data-lucide="hand" class="w-5 h-5 text-accent-600"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary-900">Sai da frente quando precisa</h3>
+                            <p class="mt-2 text-slate-600 leading-relaxed">
+                                Cliente pediu pessoa? Ela avisa a equipe e se retira. Vocês também podem assumir
+                                qualquer conversa pelo painel, e ela para de responder ali.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <span class="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <i data-lucide="users" class="w-5 h-5 text-accent-600"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary-900">Entende quem faz o quê</h3>
+                            <p class="mt-2 text-slate-600 leading-relaxed">
+                                A cliente que só corta com uma profissional específica é encaminhada para a agenda dela.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-5">
+                        <span class="shrink-0 w-11 h-11 rounded-xl bg-white border border-slate-200 flex items-center justify-center shadow-sm">
+                            <i data-lucide="clock" class="w-5 h-5 text-accent-600"></i>
+                        </span>
+                        <div>
+                            <h3 class="text-lg font-bold text-primary-900">Cada serviço com o tempo certo</h3>
+                            <p class="mt-2 text-slate-600 leading-relaxed">
+                                Escova não ocupa o mesmo tempo que coloração. Ela reserva o espaço certo na agenda
+                                para cada tipo de serviço.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== ONDE FUNCIONA ===================== -->
+        <section class="py-24 bg-white border-b border-slate-100">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+                <h2 class="text-3xl font-extrabold text-primary-900 tracking-tight">Onde ela atende</h2>
+                <p class="mt-4 text-lg text-slate-600 max-w-2xl mx-auto">
+                    Os dois lugares onde sua cliente já procura você.
+                </p>
+
+                <div class="mt-14 grid sm:grid-cols-2 gap-8 max-w-3xl mx-auto">
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200">
+                        <i data-lucide="message-square" class="w-8 h-8 text-accent-600 mx-auto"></i>
+                        <h3 class="mt-5 font-bold text-primary-900 text-lg">WhatsApp do salão</h3>
+                        <p class="mt-2 text-slate-600">O mesmo número que você já divulga. Nada muda para a cliente.</p>
+                    </div>
+                    <div class="p-8 rounded-2xl bg-slate-50 border border-slate-200">
+                        <i data-lucide="globe" class="w-8 h-8 text-accent-600 mx-auto"></i>
+                        <h3 class="mt-5 font-bold text-primary-900 text-lg">Chat do seu site</h3>
+                        <p class="mt-2 text-slate-600">Se você tem site ou página, ela atende ali também.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== SEGURANÇA ===================== -->
+        <section id="seguranca" class="py-24 bg-primary-900 text-white border-b-8 border-accent-600">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="max-w-3xl">
+                    <span class="text-sm font-bold uppercase tracking-wider text-accent-400">Transparência</span>
+                    <h2 class="mt-4 text-3xl sm:text-4xl font-extrabold tracking-tight">
+                        Sua cliente sabe com quem está falando
+                    </h2>
+                    <p class="mt-5 text-lg text-slate-300 leading-relaxed">
+                        A assistente se identifica como virtual na primeira mensagem, sempre.
+                        Cliente que descobre depois se sente enganada — e isso custa mais caro
+                        que qualquer tempo economizado.
+                    </p>
+                </div>
+
+                <div class="mt-14 grid md:grid-cols-3 gap-8">
+                    <div class="p-7 rounded-2xl bg-white/5 border border-white/10">
+                        <i data-lucide="badge-check" class="w-6 h-6 text-accent-400"></i>
+                        <h3 class="mt-5 font-bold text-white">Nunca finge ser gente</h3>
+                        <p class="mt-2 text-slate-400 leading-relaxed">Se perguntarem, ela confirma na hora que é uma assistente virtual.</p>
+                    </div>
+                    <div class="p-7 rounded-2xl bg-white/5 border border-white/10">
+                        <i data-lucide="shield" class="w-6 h-6 text-accent-400"></i>
+                        <h3 class="mt-5 font-bold text-white">Dados tratados conforme a LGPD</h3>
+                        <p class="mt-2 text-slate-400 leading-relaxed">Contrato com acordo de tratamento de dados desde o primeiro dia.</p>
+                    </div>
+                    <div class="p-7 rounded-2xl bg-white/5 border border-white/10">
+                        <i data-lucide="file-check" class="w-6 h-6 text-accent-400"></i>
+                        <h3 class="mt-5 font-bold text-white">Você aprova o que ela fala</h3>
+                        <p class="mt-2 text-slate-400 leading-relaxed">Nada vai ao ar antes de você ler e aprovar os textos e as regras.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== PREÇO ===================== -->
+        <section id="precos" class="py-24 bg-white relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="text-center max-w-2xl mx-auto">
+                    <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 tracking-tight">Um plano só, sem pegadinha</h2>
+                    <p class="mt-5 text-lg text-slate-600">
+                        Sem fidelidade, sem taxa escondida, sem cobrança por mensagem.
+                    </p>
+                </div>
+
+                <div class="mt-14 max-w-lg mx-auto">
+                    <div class="rounded-3xl border-2 border-accent-600 bg-white shadow-xl overflow-hidden">
+                        <div class="bg-accent-600 px-8 py-4 text-center">
+                            <span class="text-white text-sm font-bold uppercase tracking-wider">Plano Salão</span>
+                        </div>
+
+                        <div class="p-8">
+                            <div class="flex items-end justify-center gap-1">
+                                <span class="text-2xl font-bold text-primary-900 mb-2">R$</span>
+                                <span class="text-6xl font-extrabold text-primary-900 leading-none">99</span>
+                                <span class="text-lg text-slate-500 mb-2">/mês</span>
+                            </div>
+                            <p class="mt-3 text-center text-sm text-slate-500">
+                                mais R$ 199 de implantação, uma única vez
+                            </p>
+
+                            <ul class="mt-8 space-y-3.5">
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Assistente 24h no WhatsApp e no chat do site</li>
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Responde preço, serviço e horário de funcionamento</li>
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Marca o horário direto na agenda</li>
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Lembrete para a cliente na véspera</li>
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Agenda por profissional</li>
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Painel com o histórico das conversas</li>
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Transbordo para atendimento humano</li>
+                                <li class="flex gap-3 text-slate-700"><i data-lucide="check" class="w-5 h-5 text-accent-600 shrink-0 mt-0.5"></i> Implantação e treinamento feitos por nós</li>
+                            </ul>
+
+                            <a href="contratar.html?plano=salao" onclick="trackCta('plano_salao')" class="mt-8 flex items-center justify-center gap-2 w-full px-6 py-4 text-base font-semibold rounded-lg text-white bg-accent-600 hover:bg-accent-700 shadow-lg transition-all hover:shadow-glow">
+                                Contratar agora
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </a>
+
+                            <p class="mt-4 text-center text-xs text-slate-500">
+                                Cancele quando quiser. 7 dias para desistir sem custo.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== FAQ ===================== -->
+        <section id="faq" class="py-24 bg-slate-50">
+            <div class="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+                <h2 class="text-3xl sm:text-4xl font-extrabold text-primary-900 tracking-tight text-center">Perguntas frequentes</h2>
+
+                <div class="mt-12 space-y-4">
+                    <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                            <span class="font-semibold text-primary-900">Preciso trocar de sistema ou de agenda?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed">
+                                Não. A assistente trabalha em cima da agenda que o salão já usa. Se você já usa Google Agenda,
+                                é só compartilhar com a gente. Se não usa nenhuma, a gente cria e ensina — está incluso na implantação.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                            <span class="font-semibold text-primary-900">A cliente percebe que é um robô?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed">
+                                Sim, e por escolha nossa. A assistente se identifica como virtual logo na primeira mensagem.
+                                Cliente que descobre depois se sente enganada, e isso custa mais caro que a economia de tempo.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                            <span class="font-semibold text-primary-900">E se a cliente quiser falar com uma pessoa?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed">
+                                Basta pedir. A assistente sai da conversa na hora e avisa a equipe. Vocês também podem
+                                assumir qualquer conversa pelo painel a qualquer momento, e a partir daí ela não responde mais naquele atendimento.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                            <span class="font-semibold text-primary-900">E se ela errar alguma coisa?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed">
+                                Ela só fala do que está na configuração que você aprovou: seus serviços, seus preços, seus horários.
+                                Fora disso, ela não inventa — encaminha para a equipe. E tudo fica registrado no painel para você conferir.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                            <span class="font-semibold text-primary-900">Quanto tempo leva para começar?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed">
+                                A implantação é feita por nós. Você envia a lista de serviços, preços e horários,
+                                a gente configura, testa junto com você e coloca no ar.
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="faq-item bg-white rounded-xl border border-slate-200 overflow-hidden">
+                        <button class="faq-toggle w-full flex items-center justify-between gap-4 px-6 py-5 text-left">
+                            <span class="font-semibold text-primary-900">Tem fidelidade?</span>
+                            <i data-lucide="chevron-down" class="faq-icon w-5 h-5 text-slate-400 shrink-0 transition-transform"></i>
+                        </button>
+                        <div class="faq-content">
+                            <p class="px-6 pb-5 text-slate-600 leading-relaxed">
+                                Não. É mês a mês, cancela quando quiser. E você tem 7 dias para desistir sem custo
+                                nenhum depois de contratar.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== CONTATO ===================== -->
+        <section id="contato" class="bg-primary-900 pt-24 pb-16 border-t border-primary-800 relative">
+            <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="grid lg:grid-cols-2 gap-16">
+                    <div>
+                        <h2 class="text-3xl sm:text-4xl font-extrabold text-white tracking-tight">
+                            Quer ver funcionando antes?
+                        </h2>
+                        <p class="mt-5 text-lg text-slate-300 leading-relaxed">
+                            Deixe seus dados que a gente monta uma demonstração com os serviços e preços
+                            do seu salão. Você conversa com ela como se fosse sua cliente.
+                        </p>
+
+                        <div class="mt-10 space-y-4">
+                            <p class="flex items-center gap-3 text-slate-300"><i data-lucide="mail" class="w-5 h-5 text-accent-400"></i> contato@rxsync.com.br</p>
+                            <p class="flex items-center gap-3 text-slate-300"><i data-lucide="map-pin" class="w-5 h-5 text-accent-400"></i> Canoinhas, Santa Catarina</p>
+                        </div>
+                    </div>
+
+                    <div class="bg-white rounded-2xl p-8 shadow-2xl">
+                        <form action="https://formspree.io/f/xkjwrgjk" method="POST" onsubmit="return trackFormSubmit()">
+                            <input type="hidden" name="origem" value="site-salao">
+                            <input type="hidden" name="_subject" value="Novo lead — RXSync Salão">
+
+                            <div class="space-y-5">
+                                <div>
+                                    <label for="nome" class="block text-sm font-medium text-slate-700 mb-1.5">Seu nome</label>
+                                    <input type="text" id="nome" name="nome" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition">
+                                </div>
+
+                                <div>
+                                    <label for="salao" class="block text-sm font-medium text-slate-700 mb-1.5">Nome do salão</label>
+                                    <input type="text" id="salao" name="salao" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition">
+                                </div>
+
+                                <div>
+                                    <label for="whatsapp" class="block text-sm font-medium text-slate-700 mb-1.5">WhatsApp</label>
+                                    <input type="tel" id="whatsapp" name="whatsapp" required placeholder="(47) 99999-9999" class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition">
+                                </div>
+
+                                <div>
+                                    <label for="email" class="block text-sm font-medium text-slate-700 mb-1.5">E-mail</label>
+                                    <input type="email" id="email" name="email" required class="w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition">
+                                </div>
+
+                                <div>
+                                    <label for="profissionais" class="block text-sm font-medium text-slate-700 mb-1.5">Quantas profissionais atendem?</label>
+                                    <select id="profissionais" name="profissionais" class="select-field w-full px-4 py-3 rounded-lg border border-slate-300 focus:ring-2 focus:ring-accent-500 focus:border-accent-500 outline-none transition appearance-none bg-white">
+                                        <option value="1">Só eu</option>
+                                        <option value="2-3">2 a 3</option>
+                                        <option value="4-6">4 a 6</option>
+                                        <option value="7+">7 ou mais</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                            <button type="submit" class="mt-7 w-full flex items-center justify-center gap-2 px-6 py-4 text-base font-semibold rounded-lg text-white bg-accent-600 hover:bg-accent-700 shadow-lg transition-all">
+                                Quero minha demonstração
+                                <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                            </button>
+
+                            <p class="mt-4 text-center text-xs text-slate-500">
+                                Seus dados são usados só para entrar em contato. Sem spam.
+                            </p>
+                        </form>
+                    </div>
+                </div>
+
+                <!-- Rodapé -->
+                <div class="mt-20 pt-10 border-t border-primary-800 flex flex-col sm:flex-row justify-between items-center gap-6">
+                    <div class="flex items-center gap-2.5">
+                        <span class="w-8 h-8 rounded-lg bg-accent-600 flex items-center justify-center">
+                            <i data-lucide="sparkles" class="w-4 h-4 text-white"></i>
+                        </span>
+                        <span class="font-bold text-white">RXSync <span class="text-accent-400">Salão</span></span>
+                    </div>
+
+                    <div class="flex flex-wrap justify-center gap-x-7 gap-y-2 text-sm text-slate-400">
+                        <a href="termos/2026-08-salao-v1.html" class="hover:text-white transition-colors">Termos de Uso</a>
+                        <a href="https://rxsync.com.br" class="hover:text-white transition-colors">RXSync para clínicas</a>
+                        <a href="#precos" class="hover:text-white transition-colors">Preço</a>
+                    </div>
+
+                    <p class="text-xs text-slate-500 text-center sm:text-right">
+                        52.970.673 LUAN DUARTE CAVALHEIRO<br>
+                        CNPJ 52.970.673/0001-78
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script>
+        lucide.createIcons();
+
+        // Menu mobile
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+        btn.addEventListener('click', () => {
+            const aberto = !menu.classList.contains('hidden');
+            menu.classList.toggle('hidden');
+            btn.setAttribute('aria-expanded', String(!aberto));
+        });
+        menu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => menu.classList.add('hidden')));
+
+        // FAQ
+        document.querySelectorAll('.faq-toggle').forEach(b => {
+            b.addEventListener('click', () => {
+                const item = b.closest('.faq-item');
+                const jaAberto = item.classList.contains('active');
+                document.querySelectorAll('.faq-item').forEach(i => i.classList.remove('active'));
+                if (!jaAberto) item.classList.add('active');
+            });
+        });
+
+        function scrollToForm(label) {
+            document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+            trackCta('form_' + label);
+        }
+
+        // Espaço reservado para rastreio. Sem Analytics neste site, por escolha.
+        function trackCta() { return true; }
+        function trackFormSubmit() { return true; }
+    </script>
+
+    <!-- Chatwoot — widget da inbox de SALÃO -->
+    <script>
+        (function (d, t) {
+            var BASE_URL = "https://app.rxsync.com.br";
+            var g = d.createElement(t), s = d.getElementsByTagName(t)[0];
+            g.src = BASE_URL + "/packs/js/sdk.js";
+            g.async = true;
+            s.parentNode.insertBefore(g, s);
+            g.onload = function () {
+                window.chatwootSDK.run({
+                    websiteToken: 'COLE_AQUI_O_TOKEN_DA_INBOX_SALAO',
+                    baseUrl: BASE_URL
+                });
+            };
+        })(document, "script");
+    </script>
+</body>
+</html>
