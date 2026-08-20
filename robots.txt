@@ -1,0 +1,6 @@
+User-agent: *
+Allow: /
+Disallow: /contratar.html
+Disallow: /termos/
+
+Sitemap: https://salao.rxsync.com.br/sitemap.xml
