@@ -860,6 +860,50 @@
             }
         }
 
+
+        // ---------- Balão "Teste nossa IA aqui" ----------
+        (function () {
+            const balao   = document.getElementById('balaoChat');
+            const alvo    = document.getElementById('experimente');
+            const fechar  = document.getElementById('fecharBalao');
+            const abrir   = document.getElementById('abrirPeloBalao');
+            if (!balao || !alvo) return;
+
+            let jaMostrou = false, dispensado = false;
+
+            function esconder() {
+                balao.classList.add('opacity-0', 'translate-y-2', 'pointer-events-none');
+                setTimeout(() => balao.classList.add('hidden'), 500);
+            }
+
+            function mostrar() {
+                if (jaMostrou || dispensado) return;
+                jaMostrou = true;
+                balao.classList.remove('hidden');
+                requestAnimationFrame(() => {
+                    balao.classList.remove('opacity-0', 'translate-y-2', 'pointer-events-none');
+                });
+                // Sai de cena sozinho depois de um tempo, para não atrapalhar a leitura.
+                setTimeout(esconder, 12000);
+            }
+
+            fechar.addEventListener('click', () => { dispensado = true; esconder(); });
+            abrir.addEventListener('click', () => { dispensado = true; esconder(); abrirChat(); });
+
+            // Dispara quando a seção "Experimente" entra na tela.
+            if ('IntersectionObserver' in window) {
+                const obs = new IntersectionObserver(entradas => {
+                    entradas.forEach(e => { if (e.isIntersecting) { mostrar(); obs.disconnect(); } });
+                }, { threshold: 0.35 });
+                obs.observe(alvo);
+            } else {
+                window.addEventListener('scroll', function ver() {
+                    const r = alvo.getBoundingClientRect();
+                    if (r.top < window.innerHeight * 0.65) { mostrar(); window.removeEventListener('scroll', ver); }
+                }, { passive: true });
+            }
+        })();
+
         function scrollToForm(label) {
             document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
             trackCta('form_' + label);
@@ -886,5 +930,19 @@
             };
         })(document, "script");
     </script>
+    <!-- ===================== BALÃO DO CHAT ===================== -->
+    <!-- Aparece quando a seção "Experimente" entra na tela. Some ao clicar ou fechar. -->
+    <div id="balaoChat" class="fixed bottom-24 right-5 z-40 hidden opacity-0 translate-y-2 transition-all duration-500 pointer-events-none">
+        <div class="relative bg-accent-600 text-white rounded-2xl rounded-br-sm shadow-glow px-5 py-3.5 pr-10 max-w-[15rem]">
+            <button id="fecharBalao" aria-label="Fechar aviso" class="absolute top-2 right-2 text-white/70 hover:text-white p-1">
+                <i data-lucide="x" class="w-3.5 h-3.5"></i>
+            </button>
+            <button id="abrirPeloBalao" class="text-left">
+                <p class="font-semibold leading-snug">Teste nossa IA aqui</p>
+                <p class="mt-1 text-xs text-accent-100">É a mesma que vai atender seu salão</p>
+            </button>
+        </div>
+    </div>
+
 </body>
 </html>
