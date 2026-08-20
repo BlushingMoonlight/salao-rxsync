@@ -194,6 +194,7 @@
                 </a>
 
                 <div class="hidden lg:flex items-center gap-8">
+                    <a href="#experimente" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">Experimente</a>
                     <a href="#dores" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">O problema</a>
                     <a href="#solucao" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">Como funciona</a>
                     <a href="#seguranca" class="text-sm font-medium text-slate-600 hover:text-primary-900 transition-colors">Segurança</a>
@@ -213,6 +214,7 @@
 
         <div id="mobile-menu" class="hidden bg-white border-t border-slate-100 absolute w-full">
             <div class="px-4 pt-2 pb-6 space-y-1 shadow-2xl">
+                <a href="#experimente" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">Experimente</a>
                 <a href="#dores" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">O problema</a>
                 <a href="#solucao" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">Como funciona</a>
                 <a href="#seguranca" class="block px-3 py-2 text-base font-medium text-slate-700 hover:text-accent-600 hover:bg-slate-50 rounded-md">Segurança</a>
@@ -322,6 +324,62 @@
                                 <span class="text-xs text-slate-400">22:47 — e o salão fechado desde as 19h</span>
                             </div>
                         </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===================== EXPERIMENTE ===================== -->
+        <section id="experimente" class="py-24 bg-white border-b border-slate-100">
+            <div class="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+                <div class="rounded-3xl border-2 border-accent-300 bg-accent-50 overflow-hidden">
+                    <div class="p-8 sm:p-12">
+                        <span class="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-accent-600 text-white text-xs font-semibold tracking-wide uppercase">
+                            <i data-lucide="message-circle" class="w-3.5 h-3.5"></i>
+                            Está acontecendo agora
+                        </span>
+
+                        <h2 class="mt-6 text-3xl sm:text-4xl font-extrabold text-primary-900 tracking-tight leading-tight">
+                            Aquele balãozinho no canto da tela?<br>
+                            <span class="text-accent-600">É ela.</span>
+                        </h2>
+
+                        <p class="mt-6 text-lg text-slate-700 leading-relaxed max-w-2xl">
+                            Não é um chat de suporte. É exatamente a mesma assistente que vai atender
+                            as clientes do seu salão — mesma tecnologia, mesmo jeito de conversar.
+                            A única diferença é o que ela sabe: aqui ela foi configurada para falar da
+                            RXSync, e no seu salão ela vai saber os seus serviços, os seus preços e a sua agenda.
+                        </p>
+
+                        <p class="mt-5 text-lg font-semibold text-primary-900">
+                            Antes de decidir qualquer coisa, converse com ela. Leva dois minutos.
+                        </p>
+
+                        <div class="mt-8 grid sm:grid-cols-3 gap-4">
+                            <div class="bg-white rounded-xl border border-slate-200 p-5">
+                                <p class="text-xs font-bold uppercase tracking-wider text-accent-600">Pergunte</p>
+                                <p class="mt-2 text-slate-700">"quanto custa?"</p>
+                            </div>
+                            <div class="bg-white rounded-xl border border-slate-200 p-5">
+                                <p class="text-xs font-bold uppercase tracking-wider text-accent-600">Ou</p>
+                                <p class="mt-2 text-slate-700">"tem fidelidade?"</p>
+                            </div>
+                            <div class="bg-white rounded-xl border border-slate-200 p-5">
+                                <p class="text-xs font-bold uppercase tracking-wider text-accent-600">Ou ainda</p>
+                                <p class="mt-2 text-slate-700">"e se minha cliente quiser falar comigo?"</p>
+                            </div>
+                        </div>
+
+                        <button onclick="abrirChat()" class="mt-8 inline-flex items-center justify-center gap-2 px-8 py-4 text-base font-semibold rounded-lg text-white bg-accent-600 hover:bg-accent-700 shadow-lg transition-all hover:shadow-glow">
+                            Abrir a conversa
+                            <i data-lucide="arrow-right" class="w-4 h-4"></i>
+                        </button>
+
+                        <p class="mt-6 text-sm text-slate-600 leading-relaxed max-w-2xl">
+                            <strong class="text-primary-900">Um aviso honesto:</strong> esta versão aqui foi ensinada
+                            a falar sobre a RXSync, então ela não sabe o preço da sua escova nem marca horário nesta
+                            página. É configuração, não limitação — no seu salão, é justamente isso que ela vai fazer.
+                        </p>
                     </div>
                 </div>
             </div>
@@ -792,6 +850,15 @@
                 if (!jaAberto) item.classList.add('active');
             });
         });
+
+        function abrirChat() {
+            if (window.$chatwoot && typeof window.$chatwoot.toggle === 'function') {
+                window.$chatwoot.toggle('open');
+            } else {
+                // Widget ainda carregando: leva a pessoa ao formulário como alternativa.
+                document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
+            }
+        }
 
         function scrollToForm(label) {
             document.getElementById('contato').scrollIntoView({ behavior: 'smooth' });
